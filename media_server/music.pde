@@ -68,7 +68,7 @@ void stoping_state() {
   else {
     float time_left = 2000 - (millis() - start_time);
     float volume = time_left/2000;
-    if (volume > 1)
+    if (volume > 1 || volume < 0)
       volume = 0;
     sound.amp(volume);
   }

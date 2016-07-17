@@ -36,6 +36,7 @@ void idle_state() {
     fadeAmount = -fadeAmount ;
   }
   analogWrite(GREEN_PIN, brightness);
+  analogWrite(YELLOW_PIN, 0);
 }
 
 void alert_state() {
