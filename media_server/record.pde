@@ -66,6 +66,8 @@ Record[] loadRecords(String filename) {
   int recordCount = 0;
   String[] lines = loadStrings(filename);
   Record[] records = new Record[slot];
+  if (lines == null)
+    return records;
   for (int i = 0; i < min(lines.length, slot); i++) {
     String[] pieces = split(lines[i], TAB);
     if (pieces.length == 2) {
@@ -73,9 +75,6 @@ Record[] loadRecords(String filename) {
       recordCount++;
     }
   }
-  //if (recordCount != records.length) {
-  //  records = (Record[]) subset(records, 0, recordCount);
-  //}
   return records;
 }
 
